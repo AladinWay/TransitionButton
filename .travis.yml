@@ -1,0 +1,10 @@
+osx_image: xcode8.3
+language: swift
+cache: cocoapods
+podfile: Example/Podfile
+before_install:
+- gem install cocoapods
+- pod install --project-directory=Example
+script:
+- set -o pipefail && xcodebuild -workspace Example/TransitionButton.xcworkspace -scheme TransitionButton-Example -sdk iphonesimulator10.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+- pod lib lint
