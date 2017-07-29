@@ -68,7 +68,7 @@ To integrate TransitionButton into your Xcode project using Carthage, specify it
 github "aladinway/TransitionButton"
 ```
 
-Run `carthage update` to build the framework and drag the built `TransitionButton`.framework into your Xcode project.
+Run `carthage update` to build the framework and on your application targets’ “General” settings tab, in the “Embedded Binaries” section, drag and drop the built `TransitionButton.framework` from the Carthage/Build folder on disk.
 
 ## Usage
 `TransitionButton` is a subclass of `UIButton`. In addition to all what `UIButton` provides. `TransitionButton` has two main methods : 
@@ -91,7 +91,8 @@ For the stop Animation paramteter `StopAnimationStyle` there is three styles :
 ## Example
 
     import TransitionButton  // 1: First import the TransitionButton library
-
+    import UIKit
+    
     class FirstViewController: UIViewController {
         
         let button = TransitionButton(frame: CGRect(x: 100, y: 100, width: 100, height: 40)) // please use Autolayout in real project
@@ -122,7 +123,7 @@ For the stop Animation paramteter `StopAnimationStyle` there is three styles :
                     // .shake: when you want to reflect to the user that the task did not complete successfly
                     // .normal
                     button.stopAnimation(animationStyle: .expand, completion: {
-                        let secondVC = SecondViewController()
+                        let secondVC = UIViewController()
                         self.present(secondVC, animated: true, completion: nil)
                     })
                 })
