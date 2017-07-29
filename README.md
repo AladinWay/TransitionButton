@@ -65,7 +65,7 @@ $ brew install carthage
 To integrate TransitionButton into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "aladinway/TransitionButton" ~> 0.1
+github "aladinway/TransitionButton"
 ```
 
 Run `carthage update` to build the framework and drag the built `TransitionButton`.framework into your Xcode project.
