@@ -1,6 +1,0 @@
-use_frameworks!
-platform :ios, '8.0'
-
-target 'TransitionButton_Example' do
-  pod 'TransitionButton', :path => '../'
-end

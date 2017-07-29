@@ -153,6 +153,7 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
         self.setTitle(self.cachedTitle, for: .normal)
         self.setImage(self.cachedImage, for: .normal)
         self.isUserInteractionEnabled = true // enable again the user interaction
+        self.layer.cornerRadius = self.cornerRadius
     }
  
     private func animateToOriginalWidth() {

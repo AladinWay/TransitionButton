@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0820"
+   LastUpgradeVersion = "0830"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,24 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-               BuildableName = "TransitionButton_Example.app"
-               BlueprintName = "TransitionButton_Example"
-               ReferencedContainer = "container:TransitionButton.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "TransitionButton_Tests.xctest"
-               BlueprintName = "TransitionButton_Tests"
-               ReferencedContainer = "container:TransitionButton.xcodeproj">
+               BlueprintIdentifier = "D93F1CBF1EAEDD3F009A7474"
+               BuildableName = "iOS Example.app"
+               BlueprintName = "iOS Example"
+               ReferencedContainer = "container:iOS Example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,24 +28,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "607FACE41AFB9204008FA782"
-               BuildableName = "TransitionButton_Tests.xctest"
-               BlueprintName = "TransitionButton_Tests"
-               ReferencedContainer = "container:TransitionButton.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "TransitionButton_Example.app"
-            BlueprintName = "TransitionButton_Example"
-            ReferencedContainer = "container:TransitionButton.xcodeproj">
+            BlueprintIdentifier = "D93F1CBF1EAEDD3F009A7474"
+            BuildableName = "iOS Example.app"
+            BlueprintName = "iOS Example"
+            ReferencedContainer = "container:iOS Example.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -79,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "TransitionButton_Example.app"
-            BlueprintName = "TransitionButton_Example"
-            ReferencedContainer = "container:TransitionButton.xcodeproj">
+            BlueprintIdentifier = "D93F1CBF1EAEDD3F009A7474"
+            BuildableName = "iOS Example.app"
+            BlueprintName = "iOS Example"
+            ReferencedContainer = "container:iOS Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -98,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "607FACCF1AFB9204008FA782"
-            BuildableName = "TransitionButton_Example.app"
-            BlueprintName = "TransitionButton_Example"
-            ReferencedContainer = "container:TransitionButton.xcodeproj">
+            BlueprintIdentifier = "D93F1CBF1EAEDD3F009A7474"
+            BuildableName = "iOS Example.app"
+            BlueprintName = "iOS Example"
+            ReferencedContainer = "container:iOS Example.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
