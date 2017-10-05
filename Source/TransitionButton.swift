@@ -60,7 +60,7 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
     
     private var cachedTitle: String?
     private var cachedImage: UIImage?
-    
+    private var hapticEnabled: Bool = false
     private let springGoEase:CAMediaTimingFunction  = CAMediaTimingFunction(controlPoints: 0.45, -0.36, 0.44, 0.92)
     private let shrinkCurve:CAMediaTimingFunction   = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     private let expandCurve:CAMediaTimingFunction   = CAMediaTimingFunction(controlPoints: 0.95, 0.02, 1, 0.05)
@@ -85,9 +85,14 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
      start animating the button, before starting a task, exemple: before a network call.
      */
     open func startAnimation() {
-     let generator = UIImpactFeedbackGenerator(style: .light)
-     generator.impactOccurred()
-     AudioServicesPlaySystemSound(1519)
+        if hapticEnabled != false {
+            let generator = UIImpactFeedbackGenerator(style: .light)
+            generator.impactOccurred()
+            AudioServicesPlaySystemSound(1519)
+        } else {
+            return
+        }
+     
         self.isUserInteractionEnabled = false // Disable the user interaction during the animation
         self.cachedTitle            = title(for: .normal)  // cache title before animation of spiner
         self.cachedImage            = image(for: .normal)  // cache image before animation of spiner
