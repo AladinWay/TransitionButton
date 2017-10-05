@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import AudioToolbox
 
 /**
 Stop animation style of the `TransitionButton`.
@@ -84,6 +85,9 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
      start animating the button, before starting a task, exemple: before a network call.
      */
     open func startAnimation() {
+     let generator = UIImpactFeedbackGenerator(style: .light)
+     generator.impactOccurred()
+     AudioServicesPlaySystemSound(1519)
         self.isUserInteractionEnabled = false // Disable the user interaction during the animation
         self.cachedTitle            = title(for: .normal)  // cache title before animation of spiner
         self.cachedImage            = image(for: .normal)  // cache image before animation of spiner
