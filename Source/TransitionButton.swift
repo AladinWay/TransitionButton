@@ -113,13 +113,13 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
         case .normal:
             completion?()
             // We return to original state after a delay to give opportunity to custom transition
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay) { timer in
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
                 self.setOriginalState()
             }
         case .shake:
             completion?()
             // We return to original state after a delay to give opportunity to custom transition
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay) { timer in
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
                 self.setOriginalState()
                 self.shakeAnimation()
             }
@@ -191,7 +191,7 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
         CATransaction.setCompletionBlock {
             completion?()
             // We return to original state after a delay to give opportunity to custom transition
-            DispatchQueue.main.asyncAfter(deadline: .now() + revertDelay) { timer in
+            DispatchQueue.main.asyncAfter(deadline: .now() + revertDelay) {
                 self.setOriginalState()
                 self.layer.removeAllAnimations() // make sure we remove all animation
             }

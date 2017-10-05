@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7AB4A1D21F86AE5E00CCD0E2 /* TransitionButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB4A1D11F86AE5D00CCD0E2 /* TransitionButton.framework */; };
+		7AB4A1D31F86AE5E00CCD0E2 /* TransitionButton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB4A1D11F86AE5D00CCD0E2 /* TransitionButton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AF506531F2D0D4800631DA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF5064E1F2D0D4800631DA4 /* AppDelegate.swift */; };
 		7AF506541F2D0D4800631DA4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF5064F1F2D0D4800631DA4 /* FirstViewController.swift */; };
 		7AF506551F2D0D4800631DA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF506501F2D0D4800631DA4 /* Main.storyboard */; };
 		7AF506561F2D0D4800631DA4 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF506511F2D0D4800631DA4 /* SecondViewController.swift */; };
 		7AF506571F2D0D4800631DA4 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF506521F2D0D4800631DA4 /* SecondViewController.xib */; };
 		7AF506591F2D0D6100631DA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AF506581F2D0D6100631DA4 /* Images.xcassets */; };
-		7AF5066E1F2D11AD00631DA4 /* TransitionButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF5066D1F2D11AD00631DA4 /* TransitionButton.framework */; };
-		7AF5066F1F2D11AD00631DA4 /* TransitionButton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AF5066D1F2D11AD00631DA4 /* TransitionButton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		7AF5066C1F2D116900631DA4 /* Embed Frameworks */ = {
+		7AB4A1C61F86ACBF00CCD0E2 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				7AF5066F1F2D11AD00631DA4 /* TransitionButton.framework in Embed Frameworks */,
+				7AB4A1D31F86AE5E00CCD0E2 /* TransitionButton.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -32,13 +32,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7AB4A1D11F86AE5D00CCD0E2 /* TransitionButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TransitionButton.framework; path = "../Build/Products/Debug-iphonesimulator/TransitionButton.framework"; sourceTree = "<group>"; };
 		7AF5064E1F2D0D4800631DA4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AF5064F1F2D0D4800631DA4 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		7AF506501F2D0D4800631DA4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7AF506511F2D0D4800631DA4 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		7AF506521F2D0D4800631DA4 /* SecondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
 		7AF506581F2D0D6100631DA4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		7AF5066D1F2D11AD00631DA4 /* TransitionButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TransitionButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93F1CC01EAEDD3F009A7474 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93F1CCF1EAEDD3F009A7474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -48,7 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AF5066E1F2D11AD00631DA4 /* TransitionButton.framework in Frameworks */,
+				7AB4A1D21F86AE5E00CCD0E2 /* TransitionButton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 		D93F1CD51EAEE00D009A7474 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7AF5066D1F2D11AD00631DA4 /* TransitionButton.framework */,
+				7AB4A1D11F86AE5D00CCD0E2 /* TransitionButton.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,7 +104,7 @@
 				D93F1CBC1EAEDD3F009A7474 /* Sources */,
 				D93F1CBD1EAEDD3F009A7474 /* Frameworks */,
 				D93F1CBE1EAEDD3F009A7474 /* Resources */,
-				7AF5066C1F2D116900631DA4 /* Embed Frameworks */,
+				7AB4A1C61F86ACBF00CCD0E2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,12 +122,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = ITechnoDev;
 				TargetAttributes = {
 					D93F1CBF1EAEDD3F009A7474 = {
 						CreatedOnToolsVersion = 8.3.2;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -187,7 +187,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -195,7 +197,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -238,7 +244,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -246,7 +254,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -288,7 +300,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.itechnodev.iOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -307,7 +320,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.itechnodev.iOS-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
