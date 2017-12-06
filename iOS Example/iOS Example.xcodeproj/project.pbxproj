@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7AB4A1D21F86AE5E00CCD0E2 /* TransitionButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB4A1D11F86AE5D00CCD0E2 /* TransitionButton.framework */; };
-		7AB4A1D31F86AE5E00CCD0E2 /* TransitionButton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB4A1D11F86AE5D00CCD0E2 /* TransitionButton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AF506531F2D0D4800631DA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF5064E1F2D0D4800631DA4 /* AppDelegate.swift */; };
 		7AF506541F2D0D4800631DA4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF5064F1F2D0D4800631DA4 /* FirstViewController.swift */; };
 		7AF506551F2D0D4800631DA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF506501F2D0D4800631DA4 /* Main.storyboard */; };
@@ -16,20 +14,6 @@
 		7AF506571F2D0D4800631DA4 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AF506521F2D0D4800631DA4 /* SecondViewController.xib */; };
 		7AF506591F2D0D6100631DA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AF506581F2D0D6100631DA4 /* Images.xcassets */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		7AB4A1C61F86ACBF00CCD0E2 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				7AB4A1D31F86AE5E00CCD0E2 /* TransitionButton.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7AB4A1D11F86AE5D00CCD0E2 /* TransitionButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TransitionButton.framework; path = "../Build/Products/Debug-iphonesimulator/TransitionButton.framework"; sourceTree = "<group>"; };
@@ -48,7 +32,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AB4A1D21F86AE5E00CCD0E2 /* TransitionButton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +87,6 @@
 				D93F1CBC1EAEDD3F009A7474 /* Sources */,
 				D93F1CBD1EAEDD3F009A7474 /* Frameworks */,
 				D93F1CBE1EAEDD3F009A7474 /* Resources */,
-				7AB4A1C61F86ACBF00CCD0E2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
