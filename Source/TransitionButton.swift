@@ -75,6 +75,11 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
         self.setup()
     }
     
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        self.spiner.setToFrame(self.frame)
+    }
+    
     private func setup() {
         self.clipsToBounds  = true
         spiner.spinnerColor = spinnerColor
