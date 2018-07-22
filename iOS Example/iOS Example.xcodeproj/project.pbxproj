@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A99C6C02104D9AF00844D96 /* TransitionButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A99C6BF2104D9AF00844D96 /* TransitionButton.framework */; };
+		7A99C6C12104D9AF00844D96 /* TransitionButton.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7A99C6BF2104D9AF00844D96 /* TransitionButton.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7AF506531F2D0D4800631DA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF5064E1F2D0D4800631DA4 /* AppDelegate.swift */; };
 		7AF506541F2D0D4800631DA4 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF5064F1F2D0D4800631DA4 /* FirstViewController.swift */; };
 		7AF506551F2D0D4800631DA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF506501F2D0D4800631DA4 /* Main.storyboard */; };
@@ -15,8 +17,22 @@
 		7AF506591F2D0D6100631DA4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AF506581F2D0D6100631DA4 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7A99C6C22104D9AF00844D96 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7A99C6C12104D9AF00844D96 /* TransitionButton.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		7AB4A1D11F86AE5D00CCD0E2 /* TransitionButton.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TransitionButton.framework; path = "../Build/Products/Debug-iphonesimulator/TransitionButton.framework"; sourceTree = "<group>"; };
+		7A99C6BF2104D9AF00844D96 /* TransitionButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TransitionButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF5064E1F2D0D4800631DA4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AF5064F1F2D0D4800631DA4 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		7AF506501F2D0D4800631DA4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -32,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A99C6C02104D9AF00844D96 /* TransitionButton.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +58,7 @@
 		D93F1CB71EAEDD3F009A7474 = {
 			isa = PBXGroup;
 			children = (
+				7A99C6BF2104D9AF00844D96 /* TransitionButton.framework */,
 				D93F1CC21EAEDD3F009A7474 /* Source */,
 				D93F1CC11EAEDD3F009A7474 /* Products */,
 				D93F1CD51EAEE00D009A7474 /* Frameworks */,
@@ -72,7 +90,6 @@
 		D93F1CD51EAEE00D009A7474 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7AB4A1D11F86AE5D00CCD0E2 /* TransitionButton.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -87,6 +104,7 @@
 				D93F1CBC1EAEDD3F009A7474 /* Sources */,
 				D93F1CBD1EAEDD3F009A7474 /* Frameworks */,
 				D93F1CBE1EAEDD3F009A7474 /* Resources */,
+				7A99C6C22104D9AF00844D96 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -104,7 +122,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = ITechnoDev;
 				TargetAttributes = {
 					D93F1CBF1EAEDD3F009A7474 = {
@@ -173,6 +191,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -180,6 +199,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -230,6 +250,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -237,6 +258,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
