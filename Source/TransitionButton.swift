@@ -22,12 +22,12 @@ public enum StopAnimationStyle {
     case shake
 }
 
-@IBDesignable
+
 
 
 /// UIButton sublass for loading and transition animation. Useful for network based application or where you need to animate an action button while doing background tasks.
  
-open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, CAAnimationDelegate {
+@IBDesignable open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, CAAnimationDelegate {
     
     /// the color of the spinner while animating the button
     @IBInspectable open var spinnerColor: UIColor = UIColor.white {
@@ -64,17 +64,22 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
     private let shrinkCurve:CAMediaTimingFunction   = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     private let expandCurve:CAMediaTimingFunction   = CAMediaTimingFunction(controlPoints: 0.95, 0.02, 1, 0.05)
     private let shrinkDuration: CFTimeInterval      = 0.1
-    
-    public override init(frame: CGRect) {
+
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setup()
+         self.setup()
     }
-    
-    public required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
-        self.setup()
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+         self.setup()
     }
-    
+
+    override open func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+         self.setup()
+    }
+
     open override func layoutSubviews() {
         super.layoutSubviews()
         self.spiner.setToFrame(self.frame)
@@ -113,24 +118,26 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
      
      */
     open func stopAnimation(animationStyle:StopAnimationStyle = .normal, revertAfterDelay delay: TimeInterval = 1.0, completion:(()->Void)? = nil) {
-        
+
+        let delayToRevert = max(delay, 0.2)
+
         switch animationStyle {
         case .normal:
             completion?()
             // We return to original state after a delay to give opportunity to custom transition
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + delayToRevert) {
                 self.setOriginalState()
             }
         case .shake:
             completion?()
             // We return to original state after a delay to give opportunity to custom transition
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + delayToRevert) {
                 self.setOriginalState()
                 self.shakeAnimation()
             }
         case .expand:
             self.spiner.stopAnimation() // before animate the expand animation we need to hide the spiner first
-            self.expand(completion: completion, revertDelay:delay) // scale the round button to fill the screen
+            self.expand(completion: completion, revertDelay: delayToRevert) // scale the round button to fill the screen
         }
     }
     
