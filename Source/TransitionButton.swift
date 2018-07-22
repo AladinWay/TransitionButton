@@ -123,17 +123,15 @@ public enum StopAnimationStyle {
 
         switch animationStyle {
         case .normal:
-            completion?()
             // We return to original state after a delay to give opportunity to custom transition
             DispatchQueue.main.asyncAfter(deadline: .now() + delayToRevert) {
-                self.setOriginalState()
+                self.setOriginalState(completion: completion)
             }
         case .shake:
-            completion?()
             // We return to original state after a delay to give opportunity to custom transition
             DispatchQueue.main.asyncAfter(deadline: .now() + delayToRevert) {
-                self.setOriginalState()
-                self.shakeAnimation()
+                self.setOriginalState(completion: nil)
+                self.shakeAnimation(completion: completion)
             }
         case .expand:
             self.spiner.stopAnimation() // before animate the expand animation we need to hide the spiner first
@@ -141,7 +139,7 @@ public enum StopAnimationStyle {
         }
     }
     
-    private func shakeAnimation() {
+    private func shakeAnimation(completion:(()->Void)?) {
         let keyFrame = CAKeyframeAnimation(keyPath: "position")
         let point = self.layer.position
         keyFrame.values = [NSValue(cgPoint: CGPoint(x: CGFloat(point.x), y: CGFloat(point.y))),
@@ -156,11 +154,17 @@ public enum StopAnimationStyle {
         keyFrame.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         keyFrame.duration = 0.7
         self.layer.position = point
+
+        CATransaction.setCompletionBlock {
+            completion?()
+        }
         self.layer.add(keyFrame, forKey: keyFrame.keyPath)
+
+        CATransaction.commit()
     }
     
-    private func setOriginalState() {
-        self.animateToOriginalWidth()
+    private func setOriginalState(completion:(()->Void)?) {
+        self.animateToOriginalWidth(completion: completion)
         self.spiner.stopAnimation()
         self.setTitle(self.cachedTitle, for: .normal)
         self.setImage(self.cachedImage, for: .normal)
@@ -168,7 +172,7 @@ public enum StopAnimationStyle {
         self.layer.cornerRadius = self.cornerRadius
     }
  
-    private func animateToOriginalWidth() {
+    private func animateToOriginalWidth(completion:(()->Void)?) {
         let shrinkAnim = CABasicAnimation(keyPath: "bounds.size.width")
         shrinkAnim.fromValue = (self.bounds.height)
         shrinkAnim.toValue = (self.bounds.width)
@@ -176,7 +180,13 @@ public enum StopAnimationStyle {
         shrinkAnim.timingFunction = shrinkCurve
         shrinkAnim.fillMode = kCAFillModeForwards
         shrinkAnim.isRemovedOnCompletion = false
+
+        CATransaction.setCompletionBlock {
+            completion?()
+        }
         self.layer.add(shrinkAnim, forKey: shrinkAnim.keyPath)
+
+        CATransaction.commit()
     }
     
     private func shrink() {
@@ -204,7 +214,7 @@ public enum StopAnimationStyle {
             completion?()
             // We return to original state after a delay to give opportunity to custom transition
             DispatchQueue.main.asyncAfter(deadline: .now() + revertDelay) {
-                self.setOriginalState()
+                self.setOriginalState(completion: nil)
                 self.layer.removeAllAnimations() // make sure we remove all animation
             }
         }
