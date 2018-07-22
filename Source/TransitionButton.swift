@@ -202,9 +202,11 @@ public enum StopAnimationStyle {
     }
     
     private func expand(completion:(()->Void)?, revertDelay: TimeInterval) {
+
         let expandAnim = CABasicAnimation(keyPath: "transform.scale")
+        let expandScale = (UIScreen.main.bounds.size.height/self.frame.size.height)*2
         expandAnim.fromValue            = 1.0
-        expandAnim.toValue              = 26.0
+        expandAnim.toValue              = max(expandScale,26.0)
         expandAnim.timingFunction       = expandCurve
         expandAnim.duration             = 0.4
         expandAnim.fillMode             = kCAFillModeForwards
