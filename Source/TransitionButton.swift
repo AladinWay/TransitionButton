@@ -22,12 +22,12 @@ public enum StopAnimationStyle {
     case shake
 }
 
-@IBDesignable
+
 
 
 /// UIButton sublass for loading and transition animation. Useful for network based application or where you need to animate an action button while doing background tasks.
  
-open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, CAAnimationDelegate {
+@IBDesignable open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, CAAnimationDelegate {
     
     /// the color of the spinner while animating the button
     @IBInspectable open var spinnerColor: UIColor = UIColor.white {
@@ -64,17 +64,22 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
     private let shrinkCurve:CAMediaTimingFunction   = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
     private let expandCurve:CAMediaTimingFunction   = CAMediaTimingFunction(controlPoints: 0.95, 0.02, 1, 0.05)
     private let shrinkDuration: CFTimeInterval      = 0.1
-    
-    public override init(frame: CGRect) {
+
+    override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setup()
+         self.setup()
     }
-    
-    public required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
-        self.setup()
+
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+         self.setup()
     }
-    
+
+    override open func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+         self.setup()
+    }
+
     open override func layoutSubviews() {
         super.layoutSubviews()
         self.spiner.setToFrame(self.frame)
@@ -113,28 +118,28 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
      
      */
     open func stopAnimation(animationStyle:StopAnimationStyle = .normal, revertAfterDelay delay: TimeInterval = 1.0, completion:(()->Void)? = nil) {
-        
+
+        let delayToRevert = max(delay, 0.2)
+
         switch animationStyle {
         case .normal:
-            completion?()
             // We return to original state after a delay to give opportunity to custom transition
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-                self.setOriginalState()
+            DispatchQueue.main.asyncAfter(deadline: .now() + delayToRevert) {
+                self.setOriginalState(completion: completion)
             }
         case .shake:
-            completion?()
             // We return to original state after a delay to give opportunity to custom transition
-            DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-                self.setOriginalState()
-                self.shakeAnimation()
+            DispatchQueue.main.asyncAfter(deadline: .now() + delayToRevert) {
+                self.setOriginalState(completion: nil)
+                self.shakeAnimation(completion: completion)
             }
         case .expand:
             self.spiner.stopAnimation() // before animate the expand animation we need to hide the spiner first
-            self.expand(completion: completion, revertDelay:delay) // scale the round button to fill the screen
+            self.expand(completion: completion, revertDelay: delayToRevert) // scale the round button to fill the screen
         }
     }
     
-    private func shakeAnimation() {
+    private func shakeAnimation(completion:(()->Void)?) {
         let keyFrame = CAKeyframeAnimation(keyPath: "position")
         let point = self.layer.position
         keyFrame.values = [NSValue(cgPoint: CGPoint(x: CGFloat(point.x), y: CGFloat(point.y))),
@@ -149,11 +154,17 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
         keyFrame.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         keyFrame.duration = 0.7
         self.layer.position = point
+
+        CATransaction.setCompletionBlock {
+            completion?()
+        }
         self.layer.add(keyFrame, forKey: keyFrame.keyPath)
+
+        CATransaction.commit()
     }
     
-    private func setOriginalState() {
-        self.animateToOriginalWidth()
+    private func setOriginalState(completion:(()->Void)?) {
+        self.animateToOriginalWidth(completion: completion)
         self.spiner.stopAnimation()
         self.setTitle(self.cachedTitle, for: .normal)
         self.setImage(self.cachedImage, for: .normal)
@@ -161,7 +172,7 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
         self.layer.cornerRadius = self.cornerRadius
     }
  
-    private func animateToOriginalWidth() {
+    private func animateToOriginalWidth(completion:(()->Void)?) {
         let shrinkAnim = CABasicAnimation(keyPath: "bounds.size.width")
         shrinkAnim.fromValue = (self.bounds.height)
         shrinkAnim.toValue = (self.bounds.width)
@@ -169,7 +180,13 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
         shrinkAnim.timingFunction = shrinkCurve
         shrinkAnim.fillMode = kCAFillModeForwards
         shrinkAnim.isRemovedOnCompletion = false
+
+        CATransaction.setCompletionBlock {
+            completion?()
+        }
         self.layer.add(shrinkAnim, forKey: shrinkAnim.keyPath)
+
+        CATransaction.commit()
     }
     
     private func shrink() {
@@ -185,9 +202,11 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
     }
     
     private func expand(completion:(()->Void)?, revertDelay: TimeInterval) {
+
         let expandAnim = CABasicAnimation(keyPath: "transform.scale")
+        let expandScale = (UIScreen.main.bounds.size.height/self.frame.size.height)*2
         expandAnim.fromValue            = 1.0
-        expandAnim.toValue              = 26.0
+        expandAnim.toValue              = max(expandScale,26.0)
         expandAnim.timingFunction       = expandCurve
         expandAnim.duration             = 0.4
         expandAnim.fillMode             = kCAFillModeForwards
@@ -197,7 +216,7 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
             completion?()
             // We return to original state after a delay to give opportunity to custom transition
             DispatchQueue.main.asyncAfter(deadline: .now() + revertDelay) {
-                self.setOriginalState()
+                self.setOriginalState(completion: nil)
                 self.layer.removeAllAnimations() // make sure we remove all animation
             }
         }
