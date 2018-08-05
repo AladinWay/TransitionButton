@@ -65,7 +65,7 @@ public enum StopAnimationStyle {
     private let expandCurve:CAMediaTimingFunction   = CAMediaTimingFunction(controlPoints: 0.95, 0.02, 1, 0.05)
     private let shrinkDuration: CFTimeInterval      = 0.1
 
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
          self.setup()
     }
