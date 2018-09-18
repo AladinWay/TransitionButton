@@ -61,7 +61,7 @@ public enum StopAnimationStyle {
     private var cachedImage: UIImage?
     
     private let springGoEase:CAMediaTimingFunction  = CAMediaTimingFunction(controlPoints: 0.45, -0.36, 0.44, 0.92)
-    private let shrinkCurve:CAMediaTimingFunction   = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+    private let shrinkCurve:CAMediaTimingFunction   = CAMediaTimingFunction(name: .linear)
     private let expandCurve:CAMediaTimingFunction   = CAMediaTimingFunction(controlPoints: 0.95, 0.02, 1, 0.05)
     private let shrinkDuration: CFTimeInterval      = 0.1
 
@@ -151,7 +151,7 @@ public enum StopAnimationStyle {
                            NSValue(cgPoint: CGPoint(x: CGFloat(point.x + 10), y: CGFloat(point.y))),
                            NSValue(cgPoint: point)]
         
-        keyFrame.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        keyFrame.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         keyFrame.duration = 0.7
         self.layer.position = point
 
@@ -178,7 +178,7 @@ public enum StopAnimationStyle {
         shrinkAnim.toValue = (self.bounds.width)
         shrinkAnim.duration = shrinkDuration
         shrinkAnim.timingFunction = shrinkCurve
-        shrinkAnim.fillMode = kCAFillModeForwards
+        shrinkAnim.fillMode = .forwards
         shrinkAnim.isRemovedOnCompletion = false
 
         CATransaction.setCompletionBlock {
@@ -195,7 +195,7 @@ public enum StopAnimationStyle {
         shrinkAnim.toValue               = frame.height
         shrinkAnim.duration              = shrinkDuration
         shrinkAnim.timingFunction        = shrinkCurve
-        shrinkAnim.fillMode              = kCAFillModeForwards
+        shrinkAnim.fillMode              = .forwards
         shrinkAnim.isRemovedOnCompletion = false
         
         layer.add(shrinkAnim, forKey: shrinkAnim.keyPath)
@@ -209,7 +209,7 @@ public enum StopAnimationStyle {
         expandAnim.toValue              = max(expandScale,26.0)
         expandAnim.timingFunction       = expandCurve
         expandAnim.duration             = 0.4
-        expandAnim.fillMode             = kCAFillModeForwards
+        expandAnim.fillMode             = .forwards
         expandAnim.isRemovedOnCompletion  = false
         
         CATransaction.setCompletionBlock {
