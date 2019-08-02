@@ -51,6 +51,8 @@ public enum StopAnimationStyle {
         }
     }
     
+    open private(set) var isAnimating = false
+    
     private lazy var spiner: SpinerLayer = {
         let spiner = SpinerLayer(frame: self.frame)
         self.layer.addSublayer(spiner)
@@ -101,6 +103,8 @@ public enum StopAnimationStyle {
         self.setTitle("",  for: .normal)                    // place an empty string as title to display a spiner
         self.setImage(nil, for: .normal)                    // remove the image, if any, before displaying the spinner
         
+        self.isAnimating = true
+        
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
             self.layer.cornerRadius = self.frame.height / 2 // corner radius should be half the height to have a circle corners
         }, completion: { completed -> Void in
@@ -119,6 +123,7 @@ public enum StopAnimationStyle {
      */
     open func stopAnimation(animationStyle:StopAnimationStyle = .normal, revertAfterDelay delay: TimeInterval = 1.0, completion:(()->Void)? = nil) {
 
+        self.isAnimating = false
         let delayToRevert = max(delay, 0.2)
 
         switch animationStyle {
@@ -230,7 +235,7 @@ public enum StopAnimationStyle {
 
 
 public extension UIImage {
-    public convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+    convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
         let rect = CGRect(origin: .zero, size: size)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
         color.setFill()
