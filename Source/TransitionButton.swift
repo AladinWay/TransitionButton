@@ -170,7 +170,7 @@ Stop animation style of the `TransitionButton`.
     private func setOriginalState(completion:(()->Void)?) {
         self.animateToOriginalWidth(completion: completion)
         self.spiner.stopAnimation()
-        self.setTitle("OOOUS", for: .normal)
+        self.setTitle(cachedTitle, for: .normal)
         self.setImage(self.cachedImage, for: .normal)
         self.isUserInteractionEnabled = true // enable again the user interaction
         self.layer.cornerRadius = self.cornerRadius
