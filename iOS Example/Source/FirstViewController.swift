@@ -13,6 +13,7 @@ class FirstViewController: UIViewController {
 
     @IBAction func buttonAction(_ button: TransitionButton) {
         button.startAnimation() // 2: Then start the animation when the user tap the button
+        button.finishAnimationDuration = 0.6
         let qualityOfServiceClass = DispatchQoS.QoSClass.background
         let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
         backgroundQueue.async(execute: {
