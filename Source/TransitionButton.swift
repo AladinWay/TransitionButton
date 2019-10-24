@@ -62,7 +62,7 @@ Stop animation style of the `TransitionButton`.
     private var cachedTitle: String?
     private var cachedImage: UIImage?
     private var cachedBounds: CGRect!
-    private var isAnimation: Bool = false
+    var isAnimation: Bool = false
     
     private let springGoEase:CAMediaTimingFunction  = CAMediaTimingFunction(controlPoints: 0.45, -0.36, 0.44, 0.92)
     private let shrinkCurve:CAMediaTimingFunction   = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
