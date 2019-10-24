@@ -62,6 +62,7 @@ Stop animation style of the `TransitionButton`.
     private var cachedTitle: String?
     private var cachedImage: UIImage?
     private var cachedBounds: CGRect!
+    private var isAnimation: Bool = false
     
     private let springGoEase:CAMediaTimingFunction  = CAMediaTimingFunction(controlPoints: 0.45, -0.36, 0.44, 0.92)
     private let shrinkCurve:CAMediaTimingFunction   = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
@@ -101,6 +102,7 @@ Stop animation style of the `TransitionButton`.
         self.cachedTitle            = title(for: .normal)  // cache title before animation of spiner
         self.cachedImage            = image(for: .normal)  // cache image before animation of spiner
         self.cachedBounds           = bounds
+        self.isAnimation            = true
         
         self.setTitle("",  for: .normal)                    // place an empty string as title to display a spiner
         self.setImage(nil, for: .normal)                    // remove the image, if any, before displaying the spinner
@@ -124,6 +126,7 @@ Stop animation style of the `TransitionButton`.
     @objc open func stopAnimation(animationStyle:StopAnimationStyle = .normal, revertAfterDelay delay: TimeInterval = 1.0, completion:(()->Void)? = nil) {
 
         let delayToRevert = max(delay, 0.2)
+        self.isAnimation            = false
 
         switch animationStyle {
         case .normal:
