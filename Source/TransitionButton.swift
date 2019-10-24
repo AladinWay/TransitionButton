@@ -51,6 +51,8 @@ Stop animation style of the `TransitionButton`.
         }
     }
     
+    @IBInspectable open var finishAnimationDuration = 0.4
+    
     private lazy var spiner: SpinerLayer = {
         let spiner = SpinerLayer(frame: self.frame)
         self.layer.addSublayer(spiner)
@@ -210,8 +212,8 @@ Stop animation style of the `TransitionButton`.
         expandAnim.fromValue            = 1.0
         expandAnim.toValue              = max(expandScale,26.0)
         expandAnim.timingFunction       = expandCurve
-        expandAnim.duration             = 0.4
-        expandAnim.fillMode             = kCAFillModeForwards
+        expandAnim.duration             = finishAnimationDuration
+        expandAnim.fillMode             = .forwards
         expandAnim.isRemovedOnCompletion  = false
         
         CATransaction.setCompletionBlock {
