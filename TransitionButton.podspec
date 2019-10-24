@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'TransitionButton'
-  s.version          = '0.6'
+  s.version          = '0.6.2'
   s.summary          = 'UIButton sublass for loading and transition animation.'
 
   s.description      = <<-DESC
