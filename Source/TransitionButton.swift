@@ -16,7 +16,7 @@ Stop animation style of the `TransitionButton`.
  - expand: expand the button and cover all the screen, useful to do transit animation.
  - shake: revert the button to original state and make a shaoe animation, useful to reflect that something went wrong
  */
-public enum StopAnimationStyle {
+@objc public enum StopAnimationStyle:Int{
     case normal
     case expand
     case shake
@@ -51,6 +51,8 @@ public enum StopAnimationStyle {
         }
     }
     
+    @IBInspectable open var finishAnimationDuration = 0.4
+    
     private lazy var spiner: SpinerLayer = {
         let spiner = SpinerLayer(frame: self.frame)
         self.layer.addSublayer(spiner)
@@ -59,9 +61,11 @@ public enum StopAnimationStyle {
     
     private var cachedTitle: String?
     private var cachedImage: UIImage?
+    private var cachedBounds: CGRect!
+    public var isAnimation: Bool = false
     
     private let springGoEase:CAMediaTimingFunction  = CAMediaTimingFunction(controlPoints: 0.45, -0.36, 0.44, 0.92)
-    private let shrinkCurve:CAMediaTimingFunction   = CAMediaTimingFunction(name: .linear)
+    private let shrinkCurve:CAMediaTimingFunction   = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
     private let expandCurve:CAMediaTimingFunction   = CAMediaTimingFunction(controlPoints: 0.95, 0.02, 1, 0.05)
     private let shrinkDuration: CFTimeInterval      = 0.1
 
@@ -93,10 +97,12 @@ public enum StopAnimationStyle {
     /**
      start animating the button, before starting a task, exemple: before a network call.
      */
-    open func startAnimation() {
+    @objc open func startAnimation() {
         self.isUserInteractionEnabled = false // Disable the user interaction during the animation
         self.cachedTitle            = title(for: .normal)  // cache title before animation of spiner
         self.cachedImage            = image(for: .normal)  // cache image before animation of spiner
+        self.cachedBounds           = bounds
+        self.isAnimation            = true
         
         self.setTitle("",  for: .normal)                    // place an empty string as title to display a spiner
         self.setImage(nil, for: .normal)                    // remove the image, if any, before displaying the spinner
@@ -117,9 +123,10 @@ public enum StopAnimationStyle {
      - Parameter completion: a callback closure to be called once the animation finished, it may be useful to transit to another view controller, example transit to the home screen from the login screen.
      
      */
-    open func stopAnimation(animationStyle:StopAnimationStyle = .normal, revertAfterDelay delay: TimeInterval = 1.0, completion:(()->Void)? = nil) {
+    @objc open func stopAnimation(animationStyle:StopAnimationStyle = .normal, revertAfterDelay delay: TimeInterval = 1.0, completion:(()->Void)? = nil) {
 
         let delayToRevert = max(delay, 0.2)
+        self.isAnimation            = false
 
         switch animationStyle {
         case .normal:
@@ -151,7 +158,7 @@ public enum StopAnimationStyle {
                            NSValue(cgPoint: CGPoint(x: CGFloat(point.x + 10), y: CGFloat(point.y))),
                            NSValue(cgPoint: point)]
         
-        keyFrame.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
+        keyFrame.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         keyFrame.duration = 0.7
         self.layer.position = point
 
@@ -166,7 +173,7 @@ public enum StopAnimationStyle {
     private func setOriginalState(completion:(()->Void)?) {
         self.animateToOriginalWidth(completion: completion)
         self.spiner.stopAnimation()
-        self.setTitle(self.cachedTitle, for: .normal)
+        self.setTitle(cachedTitle, for: .normal)
         self.setImage(self.cachedImage, for: .normal)
         self.isUserInteractionEnabled = true // enable again the user interaction
         self.layer.cornerRadius = self.cornerRadius
@@ -175,10 +182,10 @@ public enum StopAnimationStyle {
     private func animateToOriginalWidth(completion:(()->Void)?) {
         let shrinkAnim = CABasicAnimation(keyPath: "bounds.size.width")
         shrinkAnim.fromValue = (self.bounds.height)
-        shrinkAnim.toValue = (self.bounds.width)
+        shrinkAnim.toValue = self.cachedBounds.width 
         shrinkAnim.duration = shrinkDuration
         shrinkAnim.timingFunction = shrinkCurve
-        shrinkAnim.fillMode = .forwards
+        shrinkAnim.fillMode = CAMediaTimingFillMode.forwards
         shrinkAnim.isRemovedOnCompletion = false
 
         CATransaction.setCompletionBlock {
@@ -195,7 +202,7 @@ public enum StopAnimationStyle {
         shrinkAnim.toValue               = frame.height
         shrinkAnim.duration              = shrinkDuration
         shrinkAnim.timingFunction        = shrinkCurve
-        shrinkAnim.fillMode              = .forwards
+        shrinkAnim.fillMode              = CAMediaTimingFillMode.forwards
         shrinkAnim.isRemovedOnCompletion = false
         
         layer.add(shrinkAnim, forKey: shrinkAnim.keyPath)
@@ -208,7 +215,7 @@ public enum StopAnimationStyle {
         expandAnim.fromValue            = 1.0
         expandAnim.toValue              = max(expandScale,26.0)
         expandAnim.timingFunction       = expandCurve
-        expandAnim.duration             = 0.4
+        expandAnim.duration             = finishAnimationDuration
         expandAnim.fillMode             = .forwards
         expandAnim.isRemovedOnCompletion  = false
         
@@ -230,7 +237,7 @@ public enum StopAnimationStyle {
 
 
 public extension UIImage {
-    public convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
+     convenience init?(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) {
         let rect = CGRect(origin: .zero, size: size)
         UIGraphicsBeginImageContextWithOptions(rect.size, false, 0.0)
         color.setFill()
