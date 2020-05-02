@@ -10,6 +10,13 @@ import UIKit
 
 open class CustomTransitionViewController: UIViewController, UIViewControllerTransitioningDelegate {
 
+    open override var modalPresentationStyle: UIModalPresentationStyle {
+        get {
+            return .fullScreen
+        }
+        set {}
+    }
+
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.transitioningDelegate = self

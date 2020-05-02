@@ -5,7 +5,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-- Fix bug where spinner isn't updated when button's frame is updated.
+ 
+## [0.5.3] - 2017-07-29
+### Added
+- Swift 5 support
+
+### Fixed
+- Full screen Transition crash
 
 ## [0.3.0] - 2017-07-29
 ### Added
