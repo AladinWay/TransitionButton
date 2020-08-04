@@ -109,17 +109,22 @@ public enum StopAnimationStyle {
         })
     }
     
-    /**
+     /**
      stop animating the button.
      
      - Parameter animationStyle: the style of the stop animation.
+     - Parameter newTitle: sets a new title at the end of the stop-animation
      - Parameter revertAfterDelay: revert the button to the original state after a delay to give opportunity to custom transition.
      - Parameter completion: a callback closure to be called once the animation finished, it may be useful to transit to another view controller, example transit to the home screen from the login screen.
      
      */
-    open func stopAnimation(animationStyle:StopAnimationStyle = .normal, revertAfterDelay delay: TimeInterval = 1.0, completion:(()->Void)? = nil) {
+    open func stopAnimation(animationStyle:StopAnimationStyle = .normal, newTitle: String? = nil, revertAfterDelay delay: TimeInterval = 1.0, completion:(()->Void)? = nil) {
 
         let delayToRevert = max(delay, 0.2)
+        
+        if(newTitle != nil){
+            self.cachedTitle = newTitle
+        }
 
         switch animationStyle {
         case .normal:
