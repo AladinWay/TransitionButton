@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7AF506471F2D086E00631DA4 /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF506411F2D086E00631DA4 /* CGRectExtension.swift */; };
-		7AF506481F2D086E00631DA4 /* CustomTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF506421F2D086E00631DA4 /* CustomTransitionViewController.swift */; };
-		7AF506491F2D086E00631DA4 /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF506431F2D086E00631DA4 /* FadeTransition.swift */; };
-		7AF5064B1F2D086E00631DA4 /* SpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF506451F2D086E00631DA4 /* SpinerLayer.swift */; };
-		7AF5064C1F2D086E00631DA4 /* TransitionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF506461F2D086E00631DA4 /* TransitionButton.swift */; };
+		BA95372925665E880037233E /* CustomTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95372325665E880037233E /* CustomTransitionViewController.swift */; };
+		BA95372A25665E880037233E /* SpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95372425665E880037233E /* SpinerLayer.swift */; };
+		BA95372B25665E880037233E /* TransitionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95372525665E880037233E /* TransitionButton.swift */; };
+		BA95372C25665E880037233E /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95372625665E880037233E /* FadeTransition.swift */; };
+		BA95372D25665E880037233E /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95372725665E880037233E /* CGRectExtension.swift */; };
 		D93F1CA21EAEDB6E009A7474 /* TransitionButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D93F1C981EAEDB6E009A7474 /* TransitionButton.framework */; };
 		D93F1CA71EAEDB6E009A7474 /* TransitionButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F1CA61EAEDB6E009A7474 /* TransitionButtonTests.swift */; };
 /* End PBXBuildFile section */
@@ -27,13 +27,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7AF506411F2D086E00631DA4 /* CGRectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
-		7AF506421F2D086E00631DA4 /* CustomTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransitionViewController.swift; sourceTree = "<group>"; };
-		7AF506431F2D086E00631DA4 /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
-		7AF506451F2D086E00631DA4 /* SpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinerLayer.swift; sourceTree = "<group>"; };
-		7AF506461F2D086E00631DA4 /* TransitionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionButton.swift; sourceTree = "<group>"; };
+		BA95372325665E880037233E /* CustomTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransitionViewController.swift; sourceTree = "<group>"; };
+		BA95372425665E880037233E /* SpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinerLayer.swift; sourceTree = "<group>"; };
+		BA95372525665E880037233E /* TransitionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionButton.swift; sourceTree = "<group>"; };
+		BA95372625665E880037233E /* FadeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
+		BA95372725665E880037233E /* CGRectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtension.swift; sourceTree = "<group>"; };
+		BA95372825665E880037233E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D93F1C981EAEDB6E009A7474 /* TransitionButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TransitionButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D93F1C9C1EAEDB6E009A7474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D93F1CA11EAEDB6E009A7474 /* TransitionButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransitionButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93F1CA61EAEDB6E009A7474 /* TransitionButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionButtonTests.swift; sourceTree = "<group>"; };
 		D93F1CA81EAEDB6E009A7474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,10 +58,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA95372125665E880037233E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				BA95372225665E880037233E /* TransitionButton */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		BA95372225665E880037233E /* TransitionButton */ = {
+			isa = PBXGroup;
+			children = (
+				BA95372325665E880037233E /* CustomTransitionViewController.swift */,
+				BA95372425665E880037233E /* SpinerLayer.swift */,
+				BA95372525665E880037233E /* TransitionButton.swift */,
+				BA95372625665E880037233E /* FadeTransition.swift */,
+				BA95372725665E880037233E /* CGRectExtension.swift */,
+				BA95372825665E880037233E /* Info.plist */,
+			);
+			path = TransitionButton;
+			sourceTree = "<group>";
+		};
 		D93F1C8E1EAEDB6E009A7474 = {
 			isa = PBXGroup;
 			children = (
-				D93F1C9A1EAEDB6E009A7474 /* Source */,
+				BA95372125665E880037233E /* Sources */,
 				D93F1CB41EAEDCD8009A7474 /* Resources */,
 				D93F1CA51EAEDB6E009A7474 /* Tests */,
 				D93F1C991EAEDB6E009A7474 /* Products */,
@@ -75,19 +96,6 @@
 				D93F1CA11EAEDB6E009A7474 /* TransitionButtonTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		D93F1C9A1EAEDB6E009A7474 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				7AF506411F2D086E00631DA4 /* CGRectExtension.swift */,
-				7AF506421F2D086E00631DA4 /* CustomTransitionViewController.swift */,
-				7AF506431F2D086E00631DA4 /* FadeTransition.swift */,
-				7AF506451F2D086E00631DA4 /* SpinerLayer.swift */,
-				7AF506461F2D086E00631DA4 /* TransitionButton.swift */,
-				D93F1C9C1EAEDB6E009A7474 /* Info.plist */,
-			);
-			path = Source;
 			sourceTree = "<group>";
 		};
 		D93F1CA51EAEDB6E009A7474 /* Tests */ = {
@@ -218,11 +226,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AF5064C1F2D086E00631DA4 /* TransitionButton.swift in Sources */,
-				7AF506481F2D086E00631DA4 /* CustomTransitionViewController.swift in Sources */,
-				7AF506491F2D086E00631DA4 /* FadeTransition.swift in Sources */,
-				7AF5064B1F2D086E00631DA4 /* SpinerLayer.swift in Sources */,
-				7AF506471F2D086E00631DA4 /* CGRectExtension.swift in Sources */,
+				BA95372D25665E880037233E /* CGRectExtension.swift in Sources */,
+				BA95372B25665E880037233E /* TransitionButton.swift in Sources */,
+				BA95372A25665E880037233E /* SpinerLayer.swift in Sources */,
+				BA95372C25665E880037233E /* FadeTransition.swift in Sources */,
+				BA95372925665E880037233E /* CustomTransitionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +385,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Source/Info.plist;
+				INFOPLIST_FILE = Sources/TransitionButton/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -402,7 +410,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Source/Info.plist;
+				INFOPLIST_FILE = Sources/TransitionButton/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
