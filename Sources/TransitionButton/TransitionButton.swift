@@ -59,6 +59,7 @@ public enum StopAnimationStyle {
     
     private var cachedTitle: String?
     private var cachedImage: UIImage?
+    private var cachedBounds: CGRect?
     
     private let springGoEase:CAMediaTimingFunction  = CAMediaTimingFunction(controlPoints: 0.45, -0.36, 0.44, 0.92)
     private let shrinkCurve:CAMediaTimingFunction   = CAMediaTimingFunction(name: .linear)
@@ -97,6 +98,7 @@ public enum StopAnimationStyle {
         self.isUserInteractionEnabled = false // Disable the user interaction during the animation
         self.cachedTitle            = title(for: .normal)  // cache title before animation of spiner
         self.cachedImage            = image(for: .normal)  // cache image before animation of spiner
+        self.cachedBounds           = bounds // cache bounds before animation of spinner
         
         self.setTitle("",  for: .normal)                    // place an empty string as title to display a spiner
         self.setImage(nil, for: .normal)                    // remove the image, if any, before displaying the spinner
@@ -175,7 +177,7 @@ public enum StopAnimationStyle {
     private func animateToOriginalWidth(completion:(()->Void)?) {
         let shrinkAnim = CABasicAnimation(keyPath: "bounds.size.width")
         shrinkAnim.fromValue = (self.bounds.height)
-        shrinkAnim.toValue = (self.bounds.width)
+        shrinkAnim.toValue = (self.cachedBounds?.width ?? self.bounds.width)
         shrinkAnim.duration = shrinkDuration
         shrinkAnim.timingFunction = shrinkCurve
         shrinkAnim.fillMode = .forwards
