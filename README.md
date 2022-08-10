@@ -8,7 +8,7 @@
 
 ## Concept
 
-  <img src="https://cdn.dribbble.com/users/62319/screenshots/1945593/shot.gif" height="527">
+  <img src="https://cdn.dribbble.com/users/62319/screenshots/1945593/shot.gif" height="545">
   
   Source: [Dribbble](https://dribbble.com/shots/1945593-Login-Home-Screen) 
 
@@ -16,11 +16,11 @@
 
   - **Expand animation**:
   
-  <img src="http://itechnodev.com/img/success.gif" height="527">
+  <img src="http://itechnodev.com/img/success.gif" width="350" height="600">
 
   - **Shake animation**:
   
-<img src="http://itechnodev.com/img/error.gif" height="527">
+<img src="http://itechnodev.com/img/error.gif" width="350" height="600">
 
 ## Example
 
