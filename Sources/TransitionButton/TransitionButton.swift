@@ -36,6 +36,13 @@ public enum StopAnimationStyle {
         }
     }
     
+    /// the type of the spinner while animating the button
+    @IBInspectable open var spinnerType: Int = 0 {
+        didSet {
+            spiner.type = SpinerAnimationType(rawValue: spinnerType) ?? .defaultSpinner
+        }
+    }
+    
     /// the background of the button in disabled state
     @IBInspectable open var disabledBackgroundColor: UIColor = UIColor.lightGray {
         didSet {

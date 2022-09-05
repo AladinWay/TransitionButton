@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA95372925665E880037233E /* CustomTransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95372325665E880037233E /* CustomTransitionViewController.swift */; };
-		BA95372A25665E880037233E /* SpinerLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95372425665E880037233E /* SpinerLayer.swift */; };
-		BA95372B25665E880037233E /* TransitionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95372525665E880037233E /* TransitionButton.swift */; };
-		BA95372C25665E880037233E /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95372625665E880037233E /* FadeTransition.swift */; };
-		BA95372D25665E880037233E /* CGRectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA95372725665E880037233E /* CGRectExtension.swift */; };
 		D93F1CA21EAEDB6E009A7474 /* TransitionButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D93F1C981EAEDB6E009A7474 /* TransitionButton.framework */; };
 		D93F1CA71EAEDB6E009A7474 /* TransitionButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93F1CA61EAEDB6E009A7474 /* TransitionButtonTests.swift */; };
+		EEA70A0B250B3E0B0095D11A /* SpinerBallRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA70A0A250B3E0B0095D11A /* SpinerBallRotate.swift */; };
+		EEA70A0D250B42110095D11A /* SpinerAnimationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA70A0C250B42110095D11A /* SpinerAnimationType.swift */; };
+		EEA70A0F250B503D0095D11A /* DefaultSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA70A0E250B503D0095D11A /* DefaultSpinner.swift */; };
+		EEA70A11250B53FA0095D11A /* SpinerBallPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA70A10250B53FA0095D11A /* SpinerBallPulse.swift */; };
+		EEA70A13250B5B3A0095D11A /* SpinerAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA70A12250B5B3A0095D11A /* SpinerAudioEqualizer.swift */; };
+		EEA70A15250B6A1E0095D11A /* SpinerBallClipRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA70A14250B6A1E0095D11A /* SpinerBallClipRotate.swift */; };
+		EEA70A17250B6B5F0095D11A /* SpinerBallScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA70A16250B6B5F0095D11A /* SpinerBallScale.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B7C20DB428C610A500EC0D04 /* SpinerBallRotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinerBallRotate.swift; sourceTree = "<group>"; };
+		B7C20DB528C610A500EC0D04 /* SpinerBallClipRotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinerBallClipRotate.swift; sourceTree = "<group>"; };
+		B7C20DB628C610A500EC0D04 /* SpinerAudioEqualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinerAudioEqualizer.swift; sourceTree = "<group>"; };
+		B7C20DB728C610A500EC0D04 /* SpinerBallScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinerBallScale.swift; sourceTree = "<group>"; };
+		B7C20DB828C610A500EC0D04 /* DefaultSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSpinner.swift; sourceTree = "<group>"; };
+		B7C20DB928C610A500EC0D04 /* SpinerBallPulse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinerBallPulse.swift; sourceTree = "<group>"; };
+		B7C20DBA28C6110F00EC0D04 /* SpinerAnimationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinerAnimationType.swift; sourceTree = "<group>"; };
 		BA95372325665E880037233E /* CustomTransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTransitionViewController.swift; sourceTree = "<group>"; };
 		BA95372425665E880037233E /* SpinerLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinerLayer.swift; sourceTree = "<group>"; };
 		BA95372525665E880037233E /* TransitionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionButton.swift; sourceTree = "<group>"; };
@@ -37,6 +46,13 @@
 		D93F1CA11EAEDB6E009A7474 /* TransitionButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransitionButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93F1CA61EAEDB6E009A7474 /* TransitionButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionButtonTests.swift; sourceTree = "<group>"; };
 		D93F1CA81EAEDB6E009A7474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEA70A0A250B3E0B0095D11A /* SpinerBallRotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinerBallRotate.swift; sourceTree = "<group>"; };
+		EEA70A0C250B42110095D11A /* SpinerAnimationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinerAnimationType.swift; sourceTree = "<group>"; };
+		EEA70A0E250B503D0095D11A /* DefaultSpinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSpinner.swift; sourceTree = "<group>"; };
+		EEA70A10250B53FA0095D11A /* SpinerBallPulse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinerBallPulse.swift; sourceTree = "<group>"; };
+		EEA70A12250B5B3A0095D11A /* SpinerAudioEqualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinerAudioEqualizer.swift; sourceTree = "<group>"; };
+		EEA70A14250B6A1E0095D11A /* SpinerBallClipRotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinerBallClipRotate.swift; sourceTree = "<group>"; };
+		EEA70A16250B6B5F0095D11A /* SpinerBallScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinerBallScale.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B7C20DB228C6107E00EC0D04 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				EEA70A12250B5B3A0095D11A /* SpinerAudioEqualizer.swift */,
+				EEA70A10250B53FA0095D11A /* SpinerBallPulse.swift */,
+				EEA70A16250B6B5F0095D11A /* SpinerBallScale.swift */,
+				EEA70A0E250B503D0095D11A /* DefaultSpinner.swift */,
+				EEA70A14250B6A1E0095D11A /* SpinerBallClipRotate.swift */,
+				EEA70A0A250B3E0B0095D11A /* SpinerBallRotate.swift */,
+				EEA70A0C250B42110095D11A /* SpinerAnimationType.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		B7C20DB328C610A500EC0D04 /* Spiners */ = {
+			isa = PBXGroup;
+			children = (
+				B7C20DB428C610A500EC0D04 /* SpinerBallRotate.swift */,
+				B7C20DB528C610A500EC0D04 /* SpinerBallClipRotate.swift */,
+				B7C20DB628C610A500EC0D04 /* SpinerAudioEqualizer.swift */,
+				B7C20DB728C610A500EC0D04 /* SpinerBallScale.swift */,
+				B7C20DB828C610A500EC0D04 /* DefaultSpinner.swift */,
+				B7C20DB928C610A500EC0D04 /* SpinerBallPulse.swift */,
+			);
+			path = Spiners;
+			sourceTree = "<group>";
+		};
 		BA95372125665E880037233E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,8 +112,10 @@
 		BA95372225665E880037233E /* TransitionButton */ = {
 			isa = PBXGroup;
 			children = (
+				B7C20DB328C610A500EC0D04 /* Spiners */,
 				BA95372325665E880037233E /* CustomTransitionViewController.swift */,
 				BA95372425665E880037233E /* SpinerLayer.swift */,
+				B7C20DBA28C6110F00EC0D04 /* SpinerAnimationType.swift */,
 				BA95372525665E880037233E /* TransitionButton.swift */,
 				BA95372625665E880037233E /* FadeTransition.swift */,
 				BA95372725665E880037233E /* CGRectExtension.swift */,
@@ -86,6 +131,7 @@
 				D93F1CB41EAEDCD8009A7474 /* Resources */,
 				D93F1CA51EAEDB6E009A7474 /* Tests */,
 				D93F1C991EAEDB6E009A7474 /* Products */,
+				B7C20DB228C6107E00EC0D04 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -226,11 +272,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA95372D25665E880037233E /* CGRectExtension.swift in Sources */,
-				BA95372B25665E880037233E /* TransitionButton.swift in Sources */,
-				BA95372A25665E880037233E /* SpinerLayer.swift in Sources */,
-				BA95372C25665E880037233E /* FadeTransition.swift in Sources */,
-				BA95372925665E880037233E /* CustomTransitionViewController.swift in Sources */,
+				EEA70A13250B5B3A0095D11A /* SpinerAudioEqualizer.swift in Sources */,
+				EEA70A11250B53FA0095D11A /* SpinerBallPulse.swift in Sources */,
+				EEA70A17250B6B5F0095D11A /* SpinerBallScale.swift in Sources */,
+				EEA70A0F250B503D0095D11A /* DefaultSpinner.swift in Sources */,
+				EEA70A15250B6A1E0095D11A /* SpinerBallClipRotate.swift in Sources */,
+				EEA70A0B250B3E0B0095D11A /* SpinerBallRotate.swift in Sources */,
+				EEA70A0D250B42110095D11A /* SpinerAnimationType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
